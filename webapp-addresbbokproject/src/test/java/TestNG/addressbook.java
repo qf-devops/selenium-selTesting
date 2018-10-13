@@ -12,8 +12,12 @@ public class addressbook {
 	 WebDriver driver;
 	@BeforeMethod
 	public void launch() {
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		  driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		  ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--no-sandbox");
+ 
+               driver = new ChromeDriver(chromeOptions);
 		  driver.get("http://35.231.231.15:32768/addressbook/");
 		  driver.manage().window().maximize();
 		  driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
