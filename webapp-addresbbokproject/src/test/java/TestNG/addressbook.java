@@ -18,7 +18,7 @@ public class addressbook {
                 chromeOptions.addArguments("--no-sandbox");
  
                driver = new ChromeDriver(chromeOptions);
-		  driver.get("http://35.231.231.15:32768/addressbook/");
+		  driver.get("http://ec2-13-126-66-139.ap-south-1.compute.amazonaws.com:8080/");
 		  driver.manage().window().maximize();
 		  driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	}
