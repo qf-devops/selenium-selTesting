@@ -33,6 +33,6 @@ public class addressbook {
  
    @AfterMethod
     public void logout() {
-	    driver.close();
+	    driver.quit();
    }
 }
