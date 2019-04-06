@@ -1,0 +1,15 @@
+
+node ("grid-node"){
+
+stage("prep"){
+ git "https://github.com/quickfixtech/selenium-selTesting.git"
+}
+stage("test"){
+sh "mvn test"
+}
+
+stage("publish"){
+sh junit '**/target/surefire-reports/TEST-*.xml'
+}
+
+}
